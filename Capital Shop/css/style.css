@@ -1,0 +1,854 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Outfit", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+}
+h2 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 35px;
+}
+header {
+  position: relative;
+  height: 100vh;
+  background-image: url(../imge/handsome-bearded-guy-posing-against-white-wall_273609-20597.jpg);
+  background-size: contain;
+  background-color: #e3e3e3;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.main-nav {
+  padding-block: 20px;
+  background-color: #fff;
+}
+.container {
+  width: 90%;
+  margin: auto;
+}
+.main-nav-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-logo {
+  display: flex;
+  justify-content: space-between;
+}
+.header-logo .home-logo {
+  background-color: red;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-logo i,
+footer i {
+  font-size: 25px;
+  color: #fff;
+}
+.header-logo h3,
+footer h3 {
+  padding-top: 5px;
+  font-size: 25px;
+}
+.header-logo span,
+footer span {
+  font-weight: 300;
+}
+.header-links ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.header-links .line-1 > a {
+  width: fit-content;
+  display: block;
+  text-align: center;
+  position: relative;
+  padding: 10px;
+}
+.top,
+.bottom,
+.left,
+.right {
+  position: absolute;
+  background-color: red;
+  transition: none;
+}
+.top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.bottom {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.left {
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  transform: scaley(0);
+  transform-origin: bottom;
+}
+.right {
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  transform: scaley(0);
+  transform-origin: right;
+}
+.line-1 a:hover .top,
+.line-1 a:hover .bottom {
+  animation: fill-to 1s forwards;
+}
+.line-1 a:hover .left,
+.line-1 a:hover .right {
+  animation: fill 1s forwards;
+}
+@keyframes fill-to {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes fill {
+  0% {
+    transform: scaley(0);
+  }
+  100% {
+    transform: scaley(1);
+  }
+}
+.header-links ul a {
+  color: black;
+  text-decoration: none;
+}
+.header-links .arrow {
+  font-size: 15px;
+}
+.dropdown-container {
+  position: relative;
+}
+.dropdown-container:hover .dropdown{
+opacity: 1;
+transform: scale(1);
+}
+.dropdown {
+  width: 280px;
+  height: 200px;
+  position: absolute;
+  top: 100%;
+  left: -100%;
+  border: 2px solid rgb(167, 156, 156);
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  z-index: 100;
+  padding: 20px 12px;
+  opacity: 0;
+transform: scale(0);
+}
+ 
+.dropdown ul {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  align-self: flex-start;
+  align-items: flex-start;
+}
+.select:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.dropdown .title {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #868282;
+  margin-bottom: 10px;
+}
+.dropdown ul li a {
+  display: block;
+  padding: 3px;
+  font-size: 15px;
+  font-weight: 500;
+  color: black;
+  transition: scale 0.3s;
+}
+.dropdown ul li a:hover {
+  scale: 1.2;
+}
+.header-icon {
+  gap: 15px;
+}
+.header-icon i {
+  font-size: 22px;
+  margin-right: 20px;
+}
+.header-icon i:hover,
+.header-links a:hover {
+  color: red;
+}
+.header-icon i.cart {
+  position: relative;
+}
+.header-icon i.cart::after {
+  content: "2";
+  position: absolute;
+  color: white;
+  bottom: 18px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  background-color: red;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  transition: 0.3s;
+}
+.header-icon i.cart:hover:after {
+  bottom: 23px;
+}
+.nav-2 {
+  background-color: black;
+  color: #fff;
+  height: 50px;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 20px;
+}
+.nav-2 span {
+  display: inline-block;
+  color: bisque;
+  padding-bottom: 5px;
+  border-bottom: 1px solid bisque;
+  font-size: 20px;
+  padding-left: 7px;
+  transition: transform 0.69s ease;
+}
+.nav-2 span:hover {
+  letter-spacing: 3px;
+}
+.header-content {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-content .header-info {
+  width: 80%;
+  text-align: center;
+}
+.header-content h1 {
+  font-size: 70px;
+}
+.header-content p:last-of-type {
+  font-size: 25px;
+  line-height: 1.6;
+  text-align: center;
+}
+.header-content button {
+  margin-top: 20px;
+  font-size: 22px;
+  width: 150px;
+  height: 60px;
+  background-color: black;
+  color: #e3e3e3;
+}
+.header-content button:hover {
+  background-color: #e3e3e3;
+  color: black;
+}
+
+/*! ==============!fashion======================= */
+.fashion {
+  padding: 50px 0;
+}
+.fashion .container {
+    width: 80%;
+    margin: auto;
+}
+.fashion-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.fashion figure {
+  width: 400px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  position: relative;
+}
+.fashion img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+.fashion figure:hover img {
+  transform: scale(1.1);
+}
+.fashion figcaption {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 20px;
+  bottom: -35px;
+  left: 0;
+  right: 0;
+  transition: bottom 0.8s ease-in-out;
+}
+.fashion figure:hover figcaption {
+  bottom: 20px;
+}
+.fashion figcaption h3 {
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 25px;
+}
+.fashion .figure button {
+  border: none;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  background-color: transparent;
+  border-bottom: 1px solid bisque;
+}
+.fashion .figure button a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 22px;
+  font-weight: 500;
+}
+/* !==========trending this week */
+.trending {
+  padding: 50px 0;
+}
+.trending-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.trending h2 {
+  font-size: 35px;
+  font-weight: 500;
+}
+.trending ul {
+  gap: 20px;
+}
+ .trending a {
+  font-size: 30px;
+  color: black;
+  position: relative;
+}
+.trending a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: -25px;
+  left: 0;
+}
+.trending a:hover:before {
+  background-color: rgb(233, 24, 24);
+}
+.trending a:hover {
+  color: red;
+}
+hr {
+  background-color: brown;
+  margin: 23px 0;
+}
+.trend-cart {
+  perspective: 1000px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+.youmaylike-details-row {
+  position: relative;
+  width: 100%;
+  height: 100%;
+ 
+ 
+}
+.trend-cart:hover .overlay-back {
+  transform: rotateY(180deg); 
+}
+.trend-cart:hover .back {
+  backface-visibility: visible;
+}
+.overlay-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.6s ease-in-out;
+}
+.overlay-back .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+.youmaylike-details-row:hover .back {
+  transform: rotateY(180deg);
+}
+.product-icon {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+.product-icon div {
+  background-color: #e3e3e3;
+  width: 60px;
+  font-size: 28px;
+}
+
+.trending-product h4 {
+  font-weight: 400;
+}
+.trending-product h4:hover {
+  color: red;
+}
+.trending-product span {
+  margin-right: 15px;
+}
+
+/*! =======customer testmonial */
+.customer-testmonial {
+  background-color: antiquewhite;
+ 
+  padding: 50px 0;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+}
+.customer-testmonial .container {
+    width: 70%;
+}
+.customer-testmonial h2 {
+  text-align: center;
+  text-transform: capitalize;
+}
+.customer-content {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+.arrow {
+  font-size: 30px;
+  font-weight: 900;
+}
+.customer-brif {
+  width: 60%;
+  font-size: 23px;
+  line-height: 1.7;
+  text-align: center;
+}
+.customer-brif  p {
+    color:#807d7d;
+}
+.customer-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.customer-info .img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+.customer-info .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.customer-info p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/*! you-may-like ========================*/
+.you-may-like {
+  padding: 70px 0;
+}
+.youmaylike-product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 50px 0;
+}
+.youmaylike-details-row {
+  width: 350px;
+  aspect-ratio: 1/1;
+  position: relative;
+}
+.youmaylike-details .overlay {
+  background: url(../imge/handsome-bearded-guy-posing-against-white-wall_273609-20597.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.5s ease-in-out;
+}
+.youmaylike-details-row:hover .overlay {
+  height: 100%;
+}
+.youmaylike-details-row:hover .product-icon {
+  opacity: 1;
+  transform: translate(-50%, 10%);
+}
+.youmaylike-details img {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+.product-icon {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  opacity: 0;
+  text-align: center;
+  transform: translate(-50%, 50%);
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+.product-icon div {
+  padding: 10px;
+}
+.product-icon div:hover  {
+  background-color: rgba(255, 0, 0, 0.589);
+}
+.youmaylike-details:hover h4 {
+  color: red;
+}
+.youmaylike-desc {
+  margin: auto;
+  line-height: 1.5;
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  padding: 10px;
+}
+.youmaylike-desc h4 {
+  font-weight: 400;
+}
+.youmaylike-desc h4:hover {
+  color: rgba(255, 0, 0, 0.425);
+}
+.youmaylike-desc span {
+  margin-right: 15px;
+}
+/*!================ latest news */
+.latest-news {
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  padding-block: 50px;
+  background-color: rgba(127, 255, 212, 0.288);
+}
+.latest-news .container {
+    width: 80%;
+}
+.news-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+}
+.news-card .card {
+  width: 30%;
+}
+.news-card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  transition: transform 0.3s ease-in-out;
+}
+.news-card img:hover {
+  transform: scale(1.05);
+}
+.news-card h6 {
+  padding-block: 20px;
+  color: #807d7d;
+  font-size: 18px;
+}
+.news-card .qs {
+  font-size: 25px;
+}
+.news-card .card:hover .qs {
+  color: red;
+}
+.news-card .last-p {
+  color: #807d7d;
+  word-spacing: 5px;
+  font-size: 20px;
+  padding-block: 20px;
+}
+.news-card button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  transition:  scale 0.2s ;
+}
+.news-card button:hover {
+  transform: scale(1.1);
+}
+.news-card button a {
+  color: #141313;
+  font-size: 20px;
+}
+
+/*!======================= services */
+.service {
+  padding-block: 50px;
+}
+.services-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.service .card {
+  text-align: center;
+  line-height: 2;
+}
+.service .card .icon {
+  overflow: hidden;
+  position: relative;
+  height: 70px;
+  aspect-ratio: 1/1;
+  margin: auto;
+}
+.service .card i {
+  display: block;
+  font-size: 50px;
+  transition: 0.5s;
+  display: block;
+
+  transition: transform 0.5s, opacity 0.5s;
+}
+.service .card .icon-1 {
+  color: #333333a1;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+.service .card .icon-2 {
+  position: absolute;
+  color: #141313;
+  left: 5%;
+  bottom: -50px;
+}
+.service .card .icon:hover .icon-2 {
+  transform: translate(0, -50%);
+  opacity: 1;
+  bottom: -20%;
+}
+.service .card .icon:hover .icon-1 {
+  transform: translate(-50%, -100%);
+  opacity: 0;
+}
+.service .card h4 {
+  font-size: 22px;
+  color: #333;
+}
+.service .card p {
+  font-size: 16px;
+  color: #474545;
+}
+/* footer */
+footer {
+  height: 70vh;
+  background-color: #141313;
+  color: #fff;
+  padding-bottom: 50px;
+}
+footer .container {
+  width: 90%;
+  margin: auto;
+}
+.subscrib {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #c9c3c3;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+footer .footer-logo {
+  display: flex;
+  justify-content: center;
+  align-self: flex-start;
+  padding-top: 20px;
+}
+footer .logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(248, 34, 34);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+footer .logo i {
+  color: #141313;
+  font-size: 25px;
+}
+.subscrib h3 {
+  padding-bottom: 10px;
+  font-size: 30px;
+}
+.subscrib p {
+  font-size: 19px;
+}
+footer form {
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer form input {
+  width: 399px;
+  height: 50px;
+  padding-left: 15px;
+  margin-right: 10px;
+}
+footer form input::placeholder {
+  font-size: 20px;
+}
+footer form button {
+  width: 150px;
+  height: 50px;
+  background-color: red;
+  color: #fff;
+  font-size: 22px;
+  outline: none;
+  transition: 0.5s;
+}
+footer form button:hover {
+  scale: 1.1;
+}
+footer .social i {
+  font-size: 30px;
+  margin-left: 10px;
+  color: cadetblue;
+  transition: 0.5s;
+}
+footer .social i:hover {
+  color: #fff;
+  scale: 1.2;
+}
+.footer-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #c9c3c3;
+  padding: 50px 0;
+}
+.footer-content .content a {
+  display: block;
+  margin-top: 10px;
+  color: #c9c3c3;
+  transition: 0.5s;
+}
+.footer-content .content a:hover {
+  text-decoration: underline;
+  scale: 1.2;
+}
+.footer-content h5 {
+  font-weight: 400;
+  font-size: 22px;
+  padding-bottom: 15px;
+}
+.footer-content p {
+  padding-bottom: 15px;
+}
+.footer-content p:hover a {
+  text-decoration: underline;
+}
+.copy-writer p {
+  padding-top: 10px;
+  text-align: center;
+}
+.copy-writer span {
+  color: red;
+  font-size: 20px;
+}
+.copy-writer .heart {
+  animation: Beat 2s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 28px;
+}
+@keyframes Beat {
+  0% {
+    transform: scale(1.2);
+    color: rgb(255, 0, 0);
+  }
+  50% {
+    transform: scale(0.75);
+    color: rgba(255, 0, 0, 0.5);
+  }
+  100% {
+    transform: scale(1.2);
+    color: #141313;
+  }
+}
